@@ -105,7 +105,7 @@ struct AdminCourseView: View {
     
     @ViewBuilder var backgroundView: some View{
         VStack{
-            //  if fourthbutton{
+             if fourthbutton{
             ScrollView(showsIndicators: false){
                 VStack(alignment: .leading){
                     VStack{
@@ -123,7 +123,7 @@ struct AdminCourseView: View {
                 
             }
         }
-        //  }
+        }
     }
     
     
@@ -147,19 +147,20 @@ struct AdminCourseView: View {
                 
                 
                 HStack{
-                   
+                    
                     
                     Text("\(sessionDetail?.pendingSessions ?? 0)").font(.headline)
-                    ForEach(0..<maximumRation , id: \.self) { number in
+                    ForEach(1..<maximumRation + 1 , id: \.self) { number in
                         
                         image(for: number, rating:  sessionDetail?.pendingSessions ?? 0)
                             .font(.system(size: 22))
                             .foregroundColor(number > sessionDetail?.pendingSessions ?? 0 ? offColor :  onColor )
-                            .onTapGesture {
-                                
-                                //   viewModel.adminModelList[index].rating = number
-                                
-                            }
+                        
+                        //                            .onTapGesture {
+                        //
+                        //                                //   viewModel.adminModelList[index].rating = number
+                        //
+                        //                            }
                         
                         
                         
@@ -167,7 +168,7 @@ struct AdminCourseView: View {
                     
                 }
                 
-                Text("1234 Total feedbacks / 85 Sessions")
+                Text("1234 Total feedbacks / \(sessionDetail?.totalSessions ?? 0) Sessions")
             }.padding()
             
             Divider().padding(2)
@@ -176,36 +177,40 @@ struct AdminCourseView: View {
                     
                     
                     //   ForEach(0..<(adminList.SessionCount.firstIndex(of: "52") ?? 0),id: \.self){ index in
-                    Text(" \(sessionDetail?.pendingSessions ?? 0)/ \(sessionDetail?.totalSessions ?? 0) Sessions")
+                    Text(" \(sessionDetail?.completedSessions ?? 0)/ \(sessionDetail?.totalSessions ?? 0) Sessions")
                     
                     
                     //   }
                     Spacer()
-                    Button {
-                        
-                    } label: {
-                        Text("To Start").foregroundColor(Color.red)
-                            .fontWeight(.bold)
+                    if sessionDetail?.totalSessions ?? 0 == sessionDetail?.completedSessions ?? 0 {
+                        Text("Completed").foregroundColor(Color(hex: "#11875E"))
+                                .fontWeight(.bold)
+                    }else{
+                            Text("To Start").foregroundColor(Color(hex: "#FF0000"))
+                                .fontWeight(.bold)
                     }
-                    
                 }
                 ZStack(alignment: .leading){
-                    Capsule().fill(Color.black.opacity(0.08)).frame(width: width,height: 8)
-                    Capsule().fill(Color.red).frame(width: width/2  ,height: 8)
-                    
-                        .gesture(DragGesture()
-                            .onChanged({ (value) in
-                                let x = value.location.x
-                                
-                                  self.width = x
-                            }).onEnded({ value in
-                                
-                                let x = value.location.x
-                                let screen = UIScreen.main.bounds.width - 30
-                                
-                                let percent = x / screen
-                                
-                            }))
+                    GeometryReader { geometry in
+                        let progress = geometry.size.width * CGFloat(sessionDetail?.completedSessions ?? 0) / CGFloat(sessionDetail?.totalSessions ?? 0)
+                       
+                        Capsule().fill(Color.black.opacity(0.08)).frame(width: geometry.size.width ,height: 8)
+                        Capsule().fill(Color(hex: "#FF0000")).frame(width: progress ,height: 8)
+                        if sessionDetail?.totalSessions ?? 0 == sessionDetail?.completedSessions ?? 0 {
+                            Capsule().fill(Color(hex: "#11875E")).frame(width: progress ,height: 8)
+                        }
+//                            .gesture(DragGesture()
+//                                .onChanged({ (value) in
+//                                    let x = value.location.x
+//
+//                                      self.width = x
+//                                }).onEnded({ value in
+//
+//
+//
+//                                }))
+                    }
+                   
                 }
                 .padding(.top)
                 
@@ -219,8 +224,8 @@ struct AdminCourseView: View {
     var offColor = Color.gray
     var onColor = Color.yellow
     
-    
     func image(for number: Int,rating: Int) -> Image {
+       // print("rating:\(rating)")
         if number > rating{
             return offImage ?? onImage
             

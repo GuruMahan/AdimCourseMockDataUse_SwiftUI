@@ -59,17 +59,11 @@ class DateManager{
         //dateFormatter.pmSymbol = "p"
         
         return  dateFormatter.string(from: date)
-        
-        
-        
+  
     }
     
-    
-    
     func gregorianDate(dateStr: String, format:String) -> String {
-        
-        
-        
+       
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
         dateFormatter.calendar = Calendar(identifier: .gregorian)

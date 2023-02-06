@@ -109,7 +109,7 @@ extension AdminCourseModel {
      "pendingSessions" : 3,
      "totalSessions" : 3,
      "studentGroupName" : "MG-1",
-     "completedSessions" : 0,
+     "completedSessions" : 1,
      "courseSessions" : [
       {
        "pendingCount" : 3,
@@ -219,7 +219,7 @@ extension AdminCourseModel {
      "pendingSessions" : 1,
      "totalSessions" : 1,
      "studentGroupName" : "MG-1",
-     "completedSessions" : 0,
+     "completedSessions" : 1,
      "courseSessions" : [
       {
        "pendingCount" : 1,
