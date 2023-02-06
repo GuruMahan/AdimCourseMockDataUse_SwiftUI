@@ -8,17 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		180B97662991026500AE9CB5 /* AdimCourseMockDataUseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B97652991026500AE9CB5 /* AdimCourseMockDataUseApp.swift */; };
-		180B97682991026500AE9CB5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B97672991026500AE9CB5 /* ContentView.swift */; };
+		180B97682991026500AE9CB5 /* AdminCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B97672991026500AE9CB5 /* AdminCourseView.swift */; };
 		180B976A2991026700AE9CB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180B97692991026700AE9CB5 /* Assets.xcassets */; };
 		180B976D2991026700AE9CB5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180B976C2991026700AE9CB5 /* Preview Assets.xcassets */; };
+		180B9774299102A700AE9CB5 /* AdminCourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B9773299102A700AE9CB5 /* AdminCourseModel.swift */; };
+		180B9776299102DE00AE9CB5 /* AdminCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B9775299102DE00AE9CB5 /* AdminCourseViewModel.swift */; };
+		180B977829910A6000AE9CB5 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B977729910A6000AE9CB5 /* DateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		180B97622991026500AE9CB5 /* AdimCourseMockDataUse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdimCourseMockDataUse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		180B97652991026500AE9CB5 /* AdimCourseMockDataUseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdimCourseMockDataUseApp.swift; sourceTree = "<group>"; };
-		180B97672991026500AE9CB5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		180B97672991026500AE9CB5 /* AdminCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCourseView.swift; sourceTree = "<group>"; };
 		180B97692991026700AE9CB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		180B976C2991026700AE9CB5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		180B9773299102A700AE9CB5 /* AdminCourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCourseModel.swift; sourceTree = "<group>"; };
+		180B9775299102DE00AE9CB5 /* AdminCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCourseViewModel.swift; sourceTree = "<group>"; };
+		180B977729910A6000AE9CB5 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,10 @@
 			isa = PBXGroup;
 			children = (
 				180B97652991026500AE9CB5 /* AdimCourseMockDataUseApp.swift */,
-				180B97672991026500AE9CB5 /* ContentView.swift */,
+				180B97672991026500AE9CB5 /* AdminCourseView.swift */,
+				180B9775299102DE00AE9CB5 /* AdminCourseViewModel.swift */,
+				180B9773299102A700AE9CB5 /* AdminCourseModel.swift */,
+				180B977729910A6000AE9CB5 /* DateManager.swift */,
 				180B97692991026700AE9CB5 /* Assets.xcassets */,
 				180B976B2991026700AE9CB5 /* Preview Content */,
 			);
@@ -137,8 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180B97682991026500AE9CB5 /* ContentView.swift in Sources */,
+				180B9774299102A700AE9CB5 /* AdminCourseModel.swift in Sources */,
+				180B977829910A6000AE9CB5 /* DateManager.swift in Sources */,
+				180B97682991026500AE9CB5 /* AdminCourseView.swift in Sources */,
 				180B97662991026500AE9CB5 /* AdimCourseMockDataUseApp.swift in Sources */,
+				180B9776299102DE00AE9CB5 /* AdminCourseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
